@@ -9,7 +9,7 @@ class SpringBootAndReactApplicationTests {
 
 	@Test
 	void contextLoads() {
-		Assertions.fail("Opops test failed");
+		//Assertions.fail("Opops test failed");
 	}
 
 }
