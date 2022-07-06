@@ -10,7 +10,7 @@ env:
   # Postgres
   POSTGRESQL_VERSION: 13.1
   POSTGRESQL_DB: spring_react
-  POSTGRESQL_USER: michael
+  POSTGRESQL_USER: postgres
   POSTGRESQL_PASSWORD: password
   # Java
   JAVA_VERSION: 11
