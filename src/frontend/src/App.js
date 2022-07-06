@@ -13,7 +13,8 @@ import {
   Badge,
   Avatar,
   Popconfirm,
-  Radio
+  Radio,
+  Divider
  } from 'antd';
 import {
   DesktopOutlined,
@@ -228,7 +229,11 @@ function App() {
               {renderStudents()}
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+          <Footer style={{ textAlign: 'center' }}>
+            <Divider>
+              <a rel="noopener noreferrer" target= "_blank" href="www.google.com">Google </a>
+           </Divider>
+          </Footer>
         </Layout>
       </Layout>
 }
