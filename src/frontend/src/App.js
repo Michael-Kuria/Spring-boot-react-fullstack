@@ -231,7 +231,7 @@ function App() {
           </Content>
           <Footer style={{ textAlign: 'center' }}>
             <Divider>
-              <a target= "_blank" href="www.google.com">Google </a>
+              <a rel="noopener noreferrer" target= "_blank" href="www.google.com">Google </a>
            </Divider>
           </Footer>
         </Layout>
