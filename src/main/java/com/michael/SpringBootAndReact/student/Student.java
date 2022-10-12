@@ -46,4 +46,8 @@ public class Student {
         this.email = email;
         this.gender = gender;
     }
+
+    public String toString(){
+        return this.name;
+    }
 }
