@@ -83,7 +83,9 @@ const removeStudent = (studentId,name, callback) => {
   }).finally(() => callback())
   }
 
-const columns = fetchStudents => [
+
+
+const columns = (fetchStudents,showDrawer,setShowDrawer,setEditStudent) => [
   {
     title: '',
     dataIndex: 'avatar',
@@ -124,10 +126,12 @@ const columns = fetchStudents => [
       >
         <Radio.Button value="delete"  >{<DeleteFilled />}</Radio.Button>
       </Popconfirm>
-      <Radio.Button value="edit"  >{<EditFilled />}</Radio.Button>
+      <Radio.Button value="edit"  onClick={() => {setShowDrawer(!showDrawer)
+                                                  setEditStudent(student)}}>{<EditFilled />}</Radio.Button>
     </Radio.Group>
   },
 ];
+
 
 function App() {
 
@@ -135,6 +139,7 @@ function App() {
   const [collapsed, setCollapsed] = useState(false);
   const [fetching, setFetching] = useState(true);
   const [showDrawer, setShowDrawer] = useState(false);
+  const [editStudent, setEditStudent] = useState(null);
 
   const fetchStudents = () =>
   
@@ -189,10 +194,14 @@ function App() {
                 showDrawer={showDrawer}
                 setShowDrawer={setShowDrawer}
                 fetchStudents={fetchStudents}
+                setEditStudent={setEditStudent}
+                editStudent = {editStudent}
+
             />
+           
             <Table
                 dataSource={students}
-                columns={columns(fetchStudents)}
+                columns={columns(fetchStudents,showDrawer,setShowDrawer,setEditStudent)}
                 bordered
                 title={() =>
                     <>
@@ -231,7 +240,7 @@ function App() {
           </Content>
           <Footer style={{ textAlign: 'center' }}>
             <Divider>
-              <a rel="noopener noreferrer" target= "_blank" href="www.google.com">Google </a>
+              <a rel="noopener noreferrer" target= "_blank" href="https://www.google.com">Google </a>
            </Divider>
           </Footer>
         </Layout>
